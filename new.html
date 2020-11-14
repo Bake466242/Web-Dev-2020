@@ -34,7 +34,7 @@
       </nav>
 
     
-    <h1>Hello, <span id="welcomeMessage">World</span></h1>
+    <h1>Search for a Movie!</h1>
 
 </button>
 
@@ -42,20 +42,43 @@
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
-        <small id="nameHelp" class="form-text text-muted">We'll never share your name with Dennis</small>
+        <small id="nameHelp" class="form-text text-muted">Type a movie here to see the poster</small>
       </div>
   
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Search</button>
     </form>
+    <div>
+    <div class="container-fluid" style="margin-top: 2em;"></div>
+    <section id="movies">
+      <div class="card" style="width: 18rem;">
+        <img src="https://mymodernmet.com/wp/wp-content/uploads/2020/08/welsh-corgi-facts-2.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Wizard of Oz</h5>
+        
+        </div>
+      </div>
+
+    </section>
+  </div>
   </div>
   <script>
-    function submitHandler(event) {
-      event.preventDefault()
-let element = document.getElementById('welcomeMessage')
-let name = document.getElementById('name').value
-element.innerHTML = name
+     let welcomeElement = document.getElementById('welcomeMessage')
+
+function submitHandler(event) {
+  event.preventDefault() // stops the page from reloading
+  let name = document.getElementById('name').value
+  // welcomeElement.innerHTML = name
+  fetch('https://sampleapis.com/movies/api/scifi-fantasy?title=' + name)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      let card = document.querySelector('img')
+      card.src = data[0].posterURL
+      card.alt = 'Movie poster for ' + data[0].title
+      let title = document.querySelector('h5')
+      title.innerHTML = data[0].title
+      })
     }
-   
   </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
