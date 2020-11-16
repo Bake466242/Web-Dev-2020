@@ -11,7 +11,7 @@ body{
     background-color: #ffffff;
     width: 400px;
     height: 400px;
-    margin: 40px;
+    
     line-height: 2em;
     padding: 20px 20px;
     color: #5b5b46;
@@ -20,16 +20,15 @@ body{
 .cecil{
     width: 400px;
     height: 400px;
-    padding: 19px;
+    padding: 20px 20px;
+
     background-image: url(https://64.media.tumblr.com/932b80166de8165623e65837ab2e2875/tumblr_n1d606Jno11r22xuzo2_1280.jpg);
     background-position: center;
     background-size: cover;
-    order: 1
 }
-.div{
+.nope{
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    align-items: baseline;
-    align-content: space-between;
+    justify-content: space-around;
 }

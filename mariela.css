@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    background-color: #e4e4e4;
+  }
+  .flex-box-container{
+    border: 4px solid #765959; 
+    background-color: #d5c3c3;
+    display: flex;
+    align-items: center;
+    
+  }
+  .flex-box-item{
+    width: 200px;
+    margin: 10px;
+    border: 2px solid #393939;
+  }
+  .item-1{
+    min-height: 100px;
+    background-color: #c9c4ff;
+    
+  }      
+  .item-2{
+    min-height: 200px;
+    background-color: #f6aefc;
+   
+  }
+  .item-3{
+    min-height: 300px;
+    background-color: #feca8a;
+    
+  }
